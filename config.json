@@ -1,0 +1,20 @@
+{
+  "seed": 202609283,
+  "weeks": 156,
+  "test_start_week": 104,
+  "workers_min": 8,
+  "workers_max": 26,
+  "worker_days_budget": 135,
+  "max_day_change": 4,
+  "units_per_worker": 12,
+  "regular_cost": 120.0,
+  "overtime_cost": 180.0,
+  "overtime_max": 5,
+  "shortage_cost": 8.0,
+  "bootstrap_draws": 1000,
+  "scenarios": [
+    "stable",
+    "surge",
+    "volatile"
+  ]
+}
