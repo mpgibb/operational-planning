@@ -10,7 +10,7 @@
   "regular_cost": 120.0,
   "overtime_cost": 180.0,
   "overtime_max": 5,
-  "shortage_cost": 8.0,
+  "shortage_cost": 24.0,
   "bootstrap_draws": 1000,
   "scenarios": [
     "stable",
