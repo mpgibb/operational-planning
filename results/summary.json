@@ -1,0 +1,307 @@
+{
+  "study": "operational-planning",
+  "config": {
+    "seed": 202609283,
+    "weeks": 156,
+    "test_start_week": 104,
+    "workers_min": 8,
+    "workers_max": 26,
+    "worker_days_budget": 135,
+    "max_day_change": 4,
+    "units_per_worker": 12,
+    "regular_cost": 120.0,
+    "overtime_cost": 180.0,
+    "overtime_max": 5,
+    "shortage_cost": 24.0,
+    "bootstrap_draws": 1000,
+    "scenarios": [
+      "stable",
+      "surge",
+      "volatile"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario": "stable",
+      "test_weeks": 52,
+      "forecast": {
+        "model_wape": 0.06005,
+        "naive_wape": 0.073226,
+        "coverage80": 0.736264
+      },
+      "policies": {
+        "buffer_rule": {
+          "total_cost": 848316.0,
+          "mean_weekly_cost": 16313.769231,
+          "service_rate": 0.998348,
+          "shortage_units": 124.0,
+          "overtime_worker_days": 47.0,
+          "unused_capacity": 9307.0,
+          "regular_worker_days": 6974.0,
+          "weekly_savings_vs_buffer": 0.0,
+          "savings_lower95": 0.0,
+          "savings_upper95": 0.0,
+          "gap_to_perfect_information": 83412.0
+        },
+        "point_plan": {
+          "total_cost": 791208.0,
+          "mean_weekly_cost": 15215.538462,
+          "service_rate": 0.994578,
+          "shortage_units": 407.0,
+          "overtime_worker_days": 154.0,
+          "unused_capacity": 2558.0,
+          "regular_worker_days": 6281.0,
+          "weekly_savings_vs_buffer": 1098.230769,
+          "savings_lower95": 782.261538,
+          "savings_upper95": 1411.875,
+          "gap_to_perfect_information": 26304.0
+        },
+        "stochastic_plan": {
+          "total_cost": 789288.0,
+          "mean_weekly_cost": 15178.615385,
+          "service_rate": 0.993846,
+          "shortage_units": 462.0,
+          "overtime_worker_days": 206.0,
+          "unused_capacity": 1977.0,
+          "regular_worker_days": 6176.0,
+          "weekly_savings_vs_buffer": 1135.153846,
+          "savings_lower95": 804.657692,
+          "savings_upper95": 1473.698077,
+          "gap_to_perfect_information": 24384.0
+        },
+        "perfect_information": {
+          "total_cost": 764904.0,
+          "mean_weekly_cost": 14709.692308,
+          "service_rate": 0.993992,
+          "shortage_units": 451.0,
+          "overtime_worker_days": 30.0,
+          "unused_capacity": 610.0,
+          "regular_worker_days": 6239.0,
+          "weekly_savings_vs_buffer": 1604.076923,
+          "savings_lower95": 1222.765385,
+          "savings_upper95": 1967.146154,
+          "gap_to_perfect_information": 0.0
+        }
+      },
+      "cost_sensitivity": [
+        {
+          "shortage_penalty": 12,
+          "total_cost": 768732.0,
+          "service_rate": 0.927254,
+          "regular_worker_days": 5860.0,
+          "overtime_worker_days": 0.0
+        },
+        {
+          "shortage_penalty": 24,
+          "total_cost": 789288.0,
+          "service_rate": 0.993846,
+          "regular_worker_days": 6176.0,
+          "overtime_worker_days": 206.0
+        },
+        {
+          "shortage_penalty": 48,
+          "total_cost": 795492.0,
+          "service_rate": 0.998348,
+          "regular_worker_days": 6233.0,
+          "overtime_worker_days": 231.0
+        }
+      ]
+    },
+    {
+      "scenario": "surge",
+      "test_weeks": 52,
+      "forecast": {
+        "model_wape": 0.068841,
+        "naive_wape": 0.076155,
+        "coverage80": 0.708791
+      },
+      "policies": {
+        "buffer_rule": {
+          "total_cost": 965184.0,
+          "mean_weekly_cost": 18561.230769,
+          "service_rate": 0.99083,
+          "shortage_units": 826.0,
+          "overtime_worker_days": 572.0,
+          "unused_capacity": 1850.0,
+          "regular_worker_days": 7020.0,
+          "weekly_savings_vs_buffer": 0.0,
+          "savings_lower95": 0.0,
+          "savings_upper95": 0.0,
+          "gap_to_perfect_information": 16716.0
+        },
+        "point_plan": {
+          "total_cost": 968448.0,
+          "mean_weekly_cost": 18624.0,
+          "service_rate": 0.988988,
+          "shortage_units": 992.0,
+          "overtime_worker_days": 614.0,
+          "unused_capacity": 1692.0,
+          "regular_worker_days": 6951.0,
+          "weekly_savings_vs_buffer": -62.769231,
+          "savings_lower95": -169.678846,
+          "savings_upper95": 55.655769,
+          "gap_to_perfect_information": 19980.0
+        },
+        "stochastic_plan": {
+          "total_cost": 961032.0,
+          "mean_weekly_cost": 18481.384615,
+          "service_rate": 0.990642,
+          "shortage_units": 843.0,
+          "overtime_worker_days": 606.0,
+          "unused_capacity": 1207.0,
+          "regular_worker_days": 6931.0,
+          "weekly_savings_vs_buffer": 79.846154,
+          "savings_lower95": -13.661538,
+          "savings_upper95": 157.407692,
+          "gap_to_perfect_information": 12564.0
+        },
+        "perfect_information": {
+          "total_cost": 948468.0,
+          "mean_weekly_cost": 18239.769231,
+          "service_rate": 0.990986,
+          "shortage_units": 812.0,
+          "overtime_worker_days": 539.0,
+          "unused_capacity": 396.0,
+          "regular_worker_days": 6933.0,
+          "weekly_savings_vs_buffer": 321.461538,
+          "savings_lower95": 196.771154,
+          "savings_upper95": 459.461538,
+          "gap_to_perfect_information": 0.0
+        }
+      },
+      "cost_sensitivity": [
+        {
+          "shortage_penalty": 12,
+          "total_cost": 924972.0,
+          "service_rate": 0.897635,
+          "regular_worker_days": 6786.0,
+          "overtime_worker_days": 0.0
+        },
+        {
+          "shortage_penalty": 24,
+          "total_cost": 961032.0,
+          "service_rate": 0.990642,
+          "regular_worker_days": 6931.0,
+          "overtime_worker_days": 606.0
+        },
+        {
+          "shortage_penalty": 48,
+          "total_cost": 972384.0,
+          "service_rate": 0.996248,
+          "regular_worker_days": 6948.0,
+          "overtime_worker_days": 680.0
+        }
+      ]
+    },
+    {
+      "scenario": "volatile",
+      "test_weeks": 52,
+      "forecast": {
+        "model_wape": 0.117311,
+        "naive_wape": 0.143139,
+        "coverage80": 0.587912
+      },
+      "policies": {
+        "buffer_rule": {
+          "total_cost": 875388.0,
+          "mean_weekly_cost": 16834.384615,
+          "service_rate": 0.995014,
+          "shortage_units": 382.0,
+          "overtime_worker_days": 243.0,
+          "unused_capacity": 8928.0,
+          "regular_worker_days": 6854.0,
+          "weekly_savings_vs_buffer": 0.0,
+          "savings_lower95": 0.0,
+          "savings_upper95": 0.0,
+          "gap_to_perfect_information": 85740.0
+        },
+        "point_plan": {
+          "total_cost": 840552.0,
+          "mean_weekly_cost": 16164.461538,
+          "service_rate": 0.99213,
+          "shortage_units": 603.0,
+          "overtime_worker_days": 350.0,
+          "unused_capacity": 4493.0,
+          "regular_worker_days": 6359.0,
+          "weekly_savings_vs_buffer": 669.923077,
+          "savings_lower95": 447.675,
+          "savings_upper95": 903.801923,
+          "gap_to_perfect_information": 50904.0
+        },
+        "stochastic_plan": {
+          "total_cost": 836736.0,
+          "mean_weekly_cost": 16091.076923,
+          "service_rate": 0.991268,
+          "shortage_units": 669.0,
+          "overtime_worker_days": 416.0,
+          "unused_capacity": 3623.0,
+          "regular_worker_days": 6215.0,
+          "weekly_savings_vs_buffer": 743.307692,
+          "savings_lower95": 503.284615,
+          "savings_upper95": 998.838462,
+          "gap_to_perfect_information": 47088.0
+        },
+        "perfect_information": {
+          "total_cost": 789648.0,
+          "mean_weekly_cost": 15185.538462,
+          "service_rate": 0.993317,
+          "shortage_units": 512.0,
+          "overtime_worker_days": 168.0,
+          "unused_capacity": 622.0,
+          "regular_worker_days": 6226.0,
+          "weekly_savings_vs_buffer": 1648.846154,
+          "savings_lower95": 1294.228846,
+          "savings_upper95": 2035.223077,
+          "gap_to_perfect_information": 0.0
+        }
+      },
+      "cost_sensitivity": [
+        {
+          "shortage_penalty": 12,
+          "total_cost": 801996.0,
+          "service_rate": 0.884714,
+          "regular_worker_days": 5800.0,
+          "overtime_worker_days": 0.0
+        },
+        {
+          "shortage_penalty": 24,
+          "total_cost": 836736.0,
+          "service_rate": 0.991268,
+          "regular_worker_days": 6215.0,
+          "overtime_worker_days": 416.0
+        },
+        {
+          "shortage_penalty": 48,
+          "total_cost": 848292.0,
+          "service_rate": 0.996685,
+          "regular_worker_days": 6303.0,
+          "overtime_worker_days": 443.0
+        }
+      ]
+    }
+  ],
+  "synthetic": true,
+  "python": "3.11.16",
+  "numpy": "2.2.6",
+  "scipy": "1.17.1",
+  "source_hashes": {
+    "PROTOCOL.md": "bd57c833c57740e271462aade4f9d86ab54f05af455a93fea2f3592387e541a6",
+    "common.py": "72d64b6ef309183fc7dab7469f554baac697b330da597cb5b72dd6a154b00377",
+    "config.json": "4006f732b371550de58ea3a3a2717800bad1bc3d22f82f887532177388e5ef65",
+    "pyproject.toml": "b31dd96595e44ee1d34b2ff854369419091b5f80fa6b899cafc5d12360a6844f",
+    "study.py": "5e0907cfc517b91614a7bd708939083a9044d8bd18381b5384b2c201573fa660",
+    "tests/test_study.py": "4a0e7eeb86b49c603995f65d056b4f4d74f1735026c9bca528b6307a3122462d",
+    "uv.lock": "c9cfc4bb5f4ec49d280949c9b540a7d3396c9ba5286794f59d7f9e5bec82f1da"
+  },
+  "data_hashes": {
+    "data/stable_demand.csv": "e4a244a0339e755f39f09866322ec74d5ebb0873224d3abf916e7ab8ad4262fe",
+    "data/surge_demand.csv": "068a02b40142a38e2e44c8f9c00a99585764949f7f475c053762f9475bfa83a5",
+    "data/volatile_demand.csv": "c4b70221413e9f2b214f3d1d79ba7ac54fa82f24c64aea6f7057e7970b361a6f",
+    "results/stable_daily_decisions.csv": "93d6eb358e767ec43448213448f7211468fd52d5d73d2807398489f6b68f33b7",
+    "results/stable_weekly.csv": "25988cbf592cb1ed802ff3c7a642be18d875fd46de37d9442179a49959db0403",
+    "results/surge_daily_decisions.csv": "54e1c99d935e8334f2a9f25318e575d37b6e8cd72e30922af10bbdb77b70d962",
+    "results/surge_weekly.csv": "0a2ec8bad91de8a1a03ea359b4cd81908f2acd33a8ff76edcea7834584012966",
+    "results/volatile_daily_decisions.csv": "86c39f7264dc62412ac1246a4e83edf73bdcf73dc56dfda5d5a0d30c577bbf0b",
+    "results/volatile_weekly.csv": "1d61cb43dcda67969a7b81946c04c238d1c17709504bdf046e95c585cad34b3e"
+  }
+}
