@@ -4,6 +4,11 @@ import numpy as np
 from study import CONFIG,generate,forecast,optimize,recourse,expected_costs,plan_from_costs,realized
 
 class CapacityTests(unittest.TestCase):
+    def test_optimizer_ignores_roundoff_in_tied_costs(self):
+        costs=np.array([[2.,1.,0.],[2.,1.,0.],[2.,1.,0.]])
+        altered=costs+np.array([[1.,-1.,1.],[-1.,1.,-1.],[1.,-1.,1.]])*1e-10
+        a,_=optimize(costs,0,2,3,2);b,_=optimize(altered,0,2,3,2)
+        np.testing.assert_array_equal(a,b)
     def test_dynamic_programming_equals_enumeration(self):
         rng=np.random.default_rng(8);costs=rng.uniform(0,20,(4,4))
         candidates=[p for p in itertools.product(range(4),repeat=4) if sum(p)<=7 and all(abs(a-b)<=1 for a,b in zip(p,p[1:]))]

@@ -32,7 +32,7 @@ def forecast(demand,week):
     x=np.concatenate([week_features(history,w) for w in range(start,week)])
     y=history[start*7:week*7]
     model=ridge_fit(x,y,20)
-    return np.maximum(0,ridge_predict(model,week_features(history,week)))
+    return np.round(np.maximum(0,ridge_predict(model,week_features(history,week))),6)
 
 def recourse(demand,workers,config):
     demand=np.atleast_1d(demand);ot=np.arange(config['overtime_max']+1)
@@ -43,6 +43,10 @@ def recourse(demand,workers,config):
     return cost[idx,choice],unmet[idx,choice],choice,np.maximum(0,capacity[choice]-demand)
 
 def optimize(costs,minimum,maximum,budget,ramp):
+    original_costs=np.asarray(costs,dtype=float)
+    # Compare integer micro-dollar costs so algebraically tied schedules do not
+    # depend on floating-point summation or linear-algebra platform details.
+    costs=np.rint(original_costs*1_000_000)
     days,k=costs.shape
     if k!=maximum-minimum+1 or budget<days*minimum:raise ValueError('Infeasible dimensions or budget')
     workers=np.arange(minimum,maximum+1)
@@ -59,10 +63,12 @@ def optimize(costs,minimum,maximum,budget,ramp):
         dp=nxt
     used,last=np.unravel_index(dp.argmin(),dp.shape)
     if not np.isfinite(dp[used,last]):raise ValueError('No feasible plan')
-    objective=float(dp[used,last]);plan=[]
+    plan=[]
     for day in range(days-1,-1,-1):
         w=int(workers[last]);plan.append(w);prior=backs[day,used,last];used-=w;last=prior
-    return np.array(plan[::-1]),objective
+    plan=np.array(plan[::-1])
+    objective=float(sum(original_costs[day,w-minimum] for day,w in enumerate(plan)))
+    return plan,objective
 
 def expected_costs(scenarios,config):
     workers=range(config['workers_min'],config['workers_max']+1)

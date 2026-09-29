@@ -27,7 +27,7 @@ uv run python -W error study.py
 git diff --exit-code -- data results
 ```
 
-The frozen `uv.lock` resolves the pinned numerical libraries. The pipeline requires no credentials, paid data or network calls after environment setup. Nine correctness tests cover numerical fixtures, information timing and decision constraints. Running the study regenerates every CSV and `results/summary.json` from `config.json`. Monetary and probability outputs are rounded to six decimal places when serialized; forecast comparisons use the unrounded calculations.
+The frozen `uv.lock` resolves the pinned numerical libraries. The pipeline requires no credentials, paid data or network calls after environment setup. Correctness tests cover numerical fixtures, information timing and decision constraints. Running the study regenerates every CSV and `results/summary.json` from `config.json`. Monetary and probability outputs are rounded to six decimal places when serialized; forecast comparisons use the unrounded calculations.
 
 ## Research materials
 

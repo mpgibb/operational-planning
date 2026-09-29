@@ -62,7 +62,7 @@ Model WAPE: 6.88%; seasonal-naive WAPE: 7.62%; nominal 80% demand interval cover
 
 | Shortage penalty | Re-optimized cost | Demand served | Regular worker-days | Overtime worker-days |
 |---|---:|---:|---:|---:|
-| $12.00 | $924,972.00 | 89.76% | 6786 | 0 |
+| $12.00 | $925,032.00 | 89.76% | 6786 | 0 |
 | $24.00 | $961,032.00 | 99.06% | 6931 | 606 |
 | $48.00 | $972,384.00 | 99.62% | 6948 | 680 |
 
@@ -73,7 +73,7 @@ Costs use a different definition in each penalty row; cross-row differences are 
 | Policy | 52-week cost | Demand served | Shortage units | Regular worker-days | Overtime worker-days | Mean weekly savings | 95% savings interval |
 |---|---:|---:|---:|---:|---:|---:|---|
 | buffer_rule | $875,388.00 | 99.50% | 382 | 6854 | 243 | $0.00 | $0.00 to $0.00 |
-| point_plan | $840,552.00 | 99.21% | 603 | 6359 | 350 | $669.92 | $447.68 to $903.80 |
+| point_plan | $840,792.00 | 99.22% | 598 | 6359 | 352 | $665.31 | $446.86 to $903.46 |
 | stochastic_plan | $836,736.00 | 99.13% | 669 | 6215 | 416 | $743.31 | $503.28 to $998.84 |
 | perfect_information | $789,648.00 | 99.33% | 512 | 6226 | 168 | $1,648.85 | $1,294.23 to $2,035.22 |
 
@@ -100,7 +100,7 @@ This completed simulation does not establish actual cost savings or staffing fea
 
 ## Reproduction and checks
 
-Run the README commands. Nine tests pass, including hand-calculated or exhaustive fixtures, temporal leakage attempts and seeded determinism. The protocol, configuration, lockfile, model code, detailed evaluation CSVs and content hashes are included. No favorable seeds were selected after seeing results. Numerical libraries are pinned; stored results round to six decimal places to make reproduction portable.
+Run the README commands. Correctness tests pass, including hand-calculated or exhaustive fixtures, temporal leakage attempts and seeded determinism. The protocol, configuration, lockfile, model code, detailed evaluation CSVs and content hashes are included. No favorable seeds were selected after seeing results. Numerical libraries are pinned; stored results round to six decimal places to make reproduction portable.
 
 ## Next practical step
 

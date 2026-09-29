@@ -172,8 +172,8 @@
       "cost_sensitivity": [
         {
           "shortage_penalty": 12,
-          "total_cost": 924972.0,
-          "service_rate": 0.897635,
+          "total_cost": 925032.0,
+          "service_rate": 0.89758,
           "regular_worker_days": 6786.0,
           "overtime_worker_days": 0.0
         },
@@ -216,17 +216,17 @@
           "gap_to_perfect_information": 85740.0
         },
         "point_plan": {
-          "total_cost": 840552.0,
-          "mean_weekly_cost": 16164.461538,
-          "service_rate": 0.99213,
-          "shortage_units": 603.0,
-          "overtime_worker_days": 350.0,
-          "unused_capacity": 4493.0,
+          "total_cost": 840792.0,
+          "mean_weekly_cost": 16169.076923,
+          "service_rate": 0.992195,
+          "shortage_units": 598.0,
+          "overtime_worker_days": 352.0,
+          "unused_capacity": 4512.0,
           "regular_worker_days": 6359.0,
-          "weekly_savings_vs_buffer": 669.923077,
-          "savings_lower95": 447.675,
-          "savings_upper95": 903.801923,
-          "gap_to_perfect_information": 50904.0
+          "weekly_savings_vs_buffer": 665.307692,
+          "savings_lower95": 446.861538,
+          "savings_upper95": 903.461538,
+          "gap_to_perfect_information": 51144.0
         },
         "stochastic_plan": {
           "total_cost": 836736.0,
@@ -285,23 +285,23 @@
   "numpy": "2.2.6",
   "scipy": "1.17.1",
   "source_hashes": {
-    "PROTOCOL.md": "bd57c833c57740e271462aade4f9d86ab54f05af455a93fea2f3592387e541a6",
+    "PROTOCOL.md": "4c706b53f0786dc4d3790127605e5093c2ae99e67578e83361c595f2fbb8b785",
     "common.py": "72d64b6ef309183fc7dab7469f554baac697b330da597cb5b72dd6a154b00377",
     "config.json": "4006f732b371550de58ea3a3a2717800bad1bc3d22f82f887532177388e5ef65",
     "pyproject.toml": "b31dd96595e44ee1d34b2ff854369419091b5f80fa6b899cafc5d12360a6844f",
-    "study.py": "5e0907cfc517b91614a7bd708939083a9044d8bd18381b5384b2c201573fa660",
-    "tests/test_study.py": "4a0e7eeb86b49c603995f65d056b4f4d74f1735026c9bca528b6307a3122462d",
+    "study.py": "cf525b093f7f29853165ecdde5b3242726a8866aad0ae4d1ed17371ae90b4d57",
+    "tests/test_study.py": "613ed8e0d15db380e2ed5423b687883355bf39730370a19c82a9bd0a056317dd",
     "uv.lock": "c9cfc4bb5f4ec49d280949c9b540a7d3396c9ba5286794f59d7f9e5bec82f1da"
   },
   "data_hashes": {
     "data/stable_demand.csv": "e4a244a0339e755f39f09866322ec74d5ebb0873224d3abf916e7ab8ad4262fe",
     "data/surge_demand.csv": "068a02b40142a38e2e44c8f9c00a99585764949f7f475c053762f9475bfa83a5",
     "data/volatile_demand.csv": "c4b70221413e9f2b214f3d1d79ba7ac54fa82f24c64aea6f7057e7970b361a6f",
-    "results/stable_daily_decisions.csv": "93d6eb358e767ec43448213448f7211468fd52d5d73d2807398489f6b68f33b7",
+    "results/stable_daily_decisions.csv": "6105d4e2aa1e21e6d51b96878005e409bd948c4017c773168553a83452800d91",
     "results/stable_weekly.csv": "25988cbf592cb1ed802ff3c7a642be18d875fd46de37d9442179a49959db0403",
-    "results/surge_daily_decisions.csv": "54e1c99d935e8334f2a9f25318e575d37b6e8cd72e30922af10bbdb77b70d962",
+    "results/surge_daily_decisions.csv": "84bf755e63951044049bd69fd6fb64c67b79790b68c2eb35dae76a7c12b54836",
     "results/surge_weekly.csv": "0a2ec8bad91de8a1a03ea359b4cd81908f2acd33a8ff76edcea7834584012966",
-    "results/volatile_daily_decisions.csv": "86c39f7264dc62412ac1246a4e83edf73bdcf73dc56dfda5d5a0d30c577bbf0b",
-    "results/volatile_weekly.csv": "1d61cb43dcda67969a7b81946c04c238d1c17709504bdf046e95c585cad34b3e"
+    "results/volatile_daily_decisions.csv": "7c68890b2ab30f0764e2d57510a4f8fe6b0964ae807076d3a782e106d26ee05b",
+    "results/volatile_weekly.csv": "597712e954a0a2c6c85d74a1c4c62c279b4dc770c2e6142a4dff12aa5206f455"
   }
 }
